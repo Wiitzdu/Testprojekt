@@ -5,6 +5,7 @@ public class TriggerEnter : MonoBehaviour
 {
     public UnityEvent enteredTrigger;
     public UnityEvent exitTrigger;
+    public UnityEvent stayTrigger;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +23,7 @@ public class TriggerEnter : MonoBehaviour
         {
             enteredTrigger?.Invoke();
         }
+        
     }
     private void OnTriggerExit(Collider other)
     {
@@ -29,5 +31,15 @@ public class TriggerEnter : MonoBehaviour
         {
             exitTrigger?.Invoke();
         }
+        exitTrigger?.Invoke();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            stayTrigger?.Invoke();
+        }
+        
     }
 }
