@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{e4e0ab1f-3ca4-4fc7-b50a-779c1236094c}">
+		<property name="assetPath">
+			<value>stone F# 5S.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.1416666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c2cb12dd-c25f-4fee-bc2c-ffcf5e39b83b}</destination>
+		</relationship>
+	</object>
+</objects>
