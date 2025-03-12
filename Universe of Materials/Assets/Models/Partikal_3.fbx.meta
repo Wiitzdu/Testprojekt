@@ -3,7 +3,12 @@ guid: 50204a49b42968e408c6c09f765d809f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_boulder_dry.002
+    second: {fileID: 2100000, guid: 8d8e9039f4f508c41b3ee491df228c22, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
