@@ -19,15 +19,17 @@ public class TriggerEnterParticle : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
-            enteredTrigger?.Invoke();
+        GameObject canvas= other.transform.parent.Find("Canvas").gameObject;
+        canvas.SetActive(true);
+        enteredTrigger?.Invoke();
         
 
     }
     private void OnTriggerExit(Collider other)
     {
- 
-            exitTrigger?.Invoke();
+        GameObject canvas = other.transform.parent.Find("Canvas").gameObject;
+        canvas.SetActive(false);
+        exitTrigger?.Invoke();
         
        
     }
