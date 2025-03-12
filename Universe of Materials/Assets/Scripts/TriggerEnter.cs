@@ -31,7 +31,7 @@ public class TriggerEnter : MonoBehaviour
         {
             exitTrigger?.Invoke();
         }
-        exitTrigger?.Invoke();
+        
     }
 
     private void OnTriggerStay(Collider other)

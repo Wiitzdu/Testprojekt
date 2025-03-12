@@ -19,27 +19,24 @@ public class TriggerEnterParticle : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Particle")
-        {
+
             enteredTrigger?.Invoke();
-        }
+        
 
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Particle")
-        {
+ 
             exitTrigger?.Invoke();
-        }
-        exitTrigger?.Invoke();
+        
+       
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Particle")
-        {
+
             stayTrigger?.Invoke();
-        }
+        
 
     }
 }
