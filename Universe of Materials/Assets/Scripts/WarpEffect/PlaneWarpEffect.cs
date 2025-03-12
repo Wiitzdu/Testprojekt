@@ -1,51 +1,98 @@
-using System.Resources;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class PlaneWarpEffect : MonoBehaviour
 {
-    public bool warpEnabled = false;
-    public float warpStrength = 0.2f;
-
     public bool scaleEnabled = true;
-    public float scaleSpeed = 5f;
-    public float scaleMaxDistance = 0.05f;
+    public float scale = 1f;
+    public float scaleMinDistance = 0.05f;
+
+    public bool warpEnabled = true;
+    public float warpStrength = 0.01f; // How much the warp effect distorts the plane
+
+    private MeshFilter meshFilter;
+    private Vector3[] originalVertices;
+    private Vector3[] modifiedVertices;
 
     private Material material;
-    private Vector2 matScale = Vector2.one;
+    private Vector2 textureScale = Vector2.one;
 
     void Start()
     {
         material = GetComponent<Renderer>().material;
+        SetupMeshWarp();
     }
 
     void Update()
     {
-        if (Mouse.current == null) return;
+        ScaleTexture();
+        WarpMesh();
+    }
 
-        float scrollInput = Mouse.current.scroll.ReadValue().y * 0.1f;
+    void SetupMeshWarp()
+    {
+        meshFilter = GetComponent<MeshFilter>();
 
-        if (scrollInput == 0) return;
-
-        if (warpEnabled)
+        if (meshFilter == null || meshFilter.mesh == null)
         {
-            // ✅ Create a warp effect by slightly skewing the plane
-            float warpFactor = Mathf.Sin(Time.time * scrollInput) * warpStrength;
-            transform.localScale += new Vector3(warpFactor, 0, warpFactor);
+            Debug.LogError("No Mesh found on object!");
+            return;
         }
 
-        if (scaleEnabled && material != null)
+        Debug.Log("Vertex Count: " + meshFilter.mesh.vertexCount);
+
+        originalVertices = meshFilter.mesh.vertices;
+        modifiedVertices = new Vector3[originalVertices.Length];
+    }
+
+    void ScaleTexture()
+    {
+        if (!scaleEnabled || material == null) return;
+
+        textureScale = new Vector2(scale, scale);
+        textureScale = new Vector2(
+            Mathf.Max(scaleMinDistance, textureScale.x),
+            Mathf.Max(scaleMinDistance, textureScale.y)
+        ); // Prevent negative scaling
+
+        Vector2 newOffset = new Vector2(0.5f, 0.5f) * (Vector2.one - textureScale);
+
+        material.mainTextureScale = textureScale;
+        material.mainTextureOffset = newOffset;
+    }
+
+    void WarpMesh()
+    {
+        if (!warpEnabled)
         {
-            matScale += new Vector2(scrollInput * scaleSpeed, scrollInput * scaleSpeed);
-            matScale = new Vector2(Mathf.Max(scaleMaxDistance, matScale.x), Mathf.Max(scaleMaxDistance, matScale.y)); // Prevent negative scaling
-
-            // ✅ Adjust texture offset to keep it centered
-            Vector2 newOffset = new Vector2(0.5f, 0.5f) * (Vector2.one - matScale);
-
-            // Apply changes
-            material.mainTextureScale = matScale;
-            material.mainTextureOffset = newOffset;
+            meshFilter.mesh.vertices = originalVertices;
+            return;
         }
+
+        if (warpStrength < 0)
+        {
+            warpStrength = 0;
+            return;
+        }
+
+        for (int i = 0; i < originalVertices.Length; i++)
+        {
+            Vector3 vertex = originalVertices[i];
+
+            // Calculate distance from center
+            float distanceSquared = Mathf.Sqrt(vertex.x * vertex.x + vertex.z * vertex.z);
+            float pincushionFactor = 1 + (warpStrength * distanceSquared * distanceSquared);
+
+            // Apply pincushion effect by scaling outward from the center
+            vertex.x *= pincushionFactor;
+            vertex.z *= pincushionFactor;
+
+            modifiedVertices[i] = vertex;
+        }
+
+        // Apply vertex changes
+        meshFilter.mesh.vertices = modifiedVertices;
+        meshFilter.mesh.RecalculateNormals();
+        meshFilter.mesh.RecalculateBounds();
     }
 }
