@@ -14,11 +14,7 @@ public class changeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(sceneLoaded&&sceneChanged)
-        {
-            Scene scene= SceneManager.GetSceneByName("Microscopic Concrete");
-            SceneManager.SetActiveScene(scene); 
-        }
+
     }
 
     private void OnEnable()
@@ -28,13 +24,13 @@ public class changeScene : MonoBehaviour
 
     public void changeScenes()
     {
-        SceneManager.LoadScene("Microscopic Concrete", LoadSceneMode.Additive);
-        sceneChanged = true;
+        SceneManager.LoadScene("Microscopic Concrete", LoadSceneMode.Single);
+
 
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        sceneLoaded = true;
+
     }
 }
