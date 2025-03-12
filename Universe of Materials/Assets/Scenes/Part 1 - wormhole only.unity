@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Microscopic Concrete
-  loadAfterSecs: 10
+  loadAfterSecs: 1
 --- !u!4 &620888036
 Transform:
   m_ObjectHideFlags: 0
