@@ -35,7 +35,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: _Noise_texture
+  m_LockedProperties: _Details_1_distortion_jiggle_speed _Noise_texture
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -77,10 +77,10 @@ Material:
     - _Details_1_distortion_density: 11.99
     - _Details_1_distortion_frequency: 0.1
     - _Details_1_distortion_jaggedness: 10
-    - _Details_1_distortion_jiggle_speed: 0.1
-    - _Details_1_distortion_magnitude: 0.0133
+    - _Details_1_distortion_jiggle_speed: 0.136
+    - _Details_1_distortion_magnitude: 0.0867
     - _Details_1_intensity: 0.8
-    - _Details_1_scroll_speed: 0.34
+    - _Details_1_scroll_speed: 0.3
     - _Details_2_distortion_frequency: 0.1
     - _Details_2_distortion_jaggedness: 10
     - _Details_2_distortion_jiggle_speed: 0.024
@@ -89,12 +89,12 @@ Material:
     - _Details_2_scroll_speed: 0.22
     - _Details_scroll_speed: 0.6
     - _Details_tiling_vertical: 0
-    - _Fresnel_power: 29.36
+    - _Fresnel_power: 15
     - _Manual_time: 0
-    - _Noise_colour_magnitude: 0.38
+    - _Noise_colour_magnitude: 0.45
     - _Noise_magnitude: 0
     - _Noise_scale: 0.55
-    - _Noise_scroll_speed: 0.6
+    - _Noise_scroll_speed: 0.5
     - _Noise_tiling: 1
     - _Noise_tiling_horizontal: 2
     - _Noise_tiling_vertical: 1
@@ -102,8 +102,8 @@ Material:
     - _QueueOffset: 0
     - _Time_multiplier: 0.63
     - _Twist_frequency: 3
-    - _Twist_magnitude: 2.1
-    - _Twist_speed: 6.58
+    - _Twist_magnitude: 1
+    - _Twist_speed: 4
     - _USE_DETAILS_1: 1
     - _USE_DETAILS_2: 1
     - _USE_MANUAL_TIME: 0
@@ -111,10 +111,10 @@ Material:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
     - _Details_1_colour: {r: 0.5943032, g: 0.6140153, b: 3.2305708, a: 1}
     - _Details_1_tiling: {r: 1, g: 0.25, b: 0, a: 0}
-    - _Details_2_colour: {r: 0.181398, g: 0, b: 0.23894492, a: 1}
+    - _Details_2_colour: {r: 0.1627451, g: 0, b: 0.108461164, a: 1}
     - _Details_2_tiling: {r: 3.55, g: 1, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
     - _Noise_tiling: {r: 3, g: 1, b: 0, a: 0}
-    - _Wormhole_colour: {r: 0, g: 0, b: 0, a: 1}
+    - _Wormhole_colour: {r: 0.05660379, g: 0.024498349, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
