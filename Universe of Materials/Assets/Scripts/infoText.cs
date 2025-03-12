@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class infoText : MonoBehaviour
 {
-    [SerializeField]
-    private Transform player;
+    //[SerializeField]
+    //private Transform player;
     [SerializeField]
     float fadeDuration=3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,7 +41,7 @@ public class infoText : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
-        Image im = GetComponent<Image>();
+        RawImage im = GetComponent<RawImage>();
         Color initialColor = im.color;
         Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 0f);
 
@@ -57,7 +57,7 @@ public class infoText : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        Image im = GetComponent<Image>();
+        RawImage im = GetComponent<RawImage>();
         Color initialColor = im.color;
         Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 1f);
 

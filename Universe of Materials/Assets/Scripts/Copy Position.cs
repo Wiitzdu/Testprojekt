@@ -10,9 +10,13 @@ public class CopyPosition : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        transform.position = objectToCopy.transform.position;
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.position=objectToCopy.transform.position;
+        //transform.position=objectToCopy.transform.position;
     }
 }
