@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6036da83-e7d7-4c5f-9962-9f0bd02290b7}">
+		<property name="assetPath">
+			<value>Erik Satie - Gymnopédie No.1.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>216.864</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c2cb12dd-c25f-4fee-bc2c-ffcf5e39b83b}</destination>
+		</relationship>
+	</object>
+</objects>
