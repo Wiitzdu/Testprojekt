@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 1249119065}
   - component: {fileID: 1249119064}
   - component: {fileID: 1249119068}
-  - component: {fileID: 1249119067}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -327,37 +326,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249119063}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 10}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!114 &1249119067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249119063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc4cbadf30f25c4c8c9c4ccb57a652f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoomEnabled: 0
-  zoomSpeed: 10
-  zoomMinDistance: 0.1
-  zoomMaxDistance: 80
-  warpEnabled: 0
-  warpMinFOV: 5
-  warpMaxFOV: 90
-  scaleEnabled: 1
-  scaleSpeed: 0.5
-  scaleStrength: 0.2
-  mainCamera: {fileID: 1249119065}
-  warpMaterial: {fileID: 2100000, guid: 67f430b5420102347be4cbcd3f3d89e6, type: 2}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1249119068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +389,7 @@ GameObject:
   - component: {fileID: 1958943765}
   - component: {fileID: 1958943764}
   - component: {fileID: 1958943763}
+  - component: {fileID: 1958943767}
   m_Layer: 0
   m_Name: Concrete Plane
   m_TagString: Untagged
@@ -511,6 +487,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1958943767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958943762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90642814f602624d952e7c551934cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomEnabled: 0
+  zoomSpeed: 0.5
+  minZoomScale: 1
+  maxZoomScale: 100
+  warpEnabled: 0
+  warpStrength: 0.2
+  scaleEnabled: 1
+  scaleStrength: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

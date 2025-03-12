@@ -1,5 +1,5 @@
-using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WarpEffect : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class WarpEffect : MonoBehaviour
     public Material warpMaterial;
 
     private Vector3 cameraStartPos;
+    private float scrollInput = 0f;
 
     void Start()
     {
@@ -28,7 +29,11 @@ public class WarpEffect : MonoBehaviour
 
     void Update()
     {
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (Mouse.current != null)
+        {
+            scrollInput = Mouse.current.scroll.ReadValue().y;
+            scrollInput *= 0.1f;
+        }
 
         if (scrollInput != 0)
         {
