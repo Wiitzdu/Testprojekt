@@ -14,15 +14,21 @@ public class changeOutlineColor : MonoBehaviour
         
     }
 
-    public void changeOutlineColorSelected()
+    public void changeOutlineColorBlue()
     {
         Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
         GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
     }
-    public void changeOutlineColorUnselected()
+    public void changeOutlineColorRed()
     {
         Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
         GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+    }
+
+    public void changeOutlineColorTransparent()
+    {
+        Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
+        GetComponent<Renderer>().material.SetColor("_Color", Color.clear);
     }
 
 
