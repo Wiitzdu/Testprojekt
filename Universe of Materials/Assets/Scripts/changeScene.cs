@@ -24,7 +24,7 @@ public class changeScene : MonoBehaviour
 
     public void changeScenes()
     {
-        SceneManager.LoadScene("Microscopic Concrete", LoadSceneMode.Single);
+        SceneManager.LoadScene("Part 1 - wormhole only", LoadSceneMode.Single);
 
 
     }

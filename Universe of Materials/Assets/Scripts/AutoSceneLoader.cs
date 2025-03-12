@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class AutoSceneLoader : MonoBehaviour
 {
     public string sceneToLoad = "Microscopic Concrete";
-    public float loadAfterSecs = 10f;
+    public float loadAfterSecs = 2f;
 
     void Start()
     {
