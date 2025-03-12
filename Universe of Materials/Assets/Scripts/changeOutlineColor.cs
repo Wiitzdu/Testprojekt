@@ -14,10 +14,23 @@ public class changeOutlineColor : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider collider)
+    public void changeOutlineColorBlue()
     {
-        Material material = collider.gameObject.GetComponent<MeshRenderer>().GetComponent<Material>();
-        material.SetColor("_Color", Color.red);
+        Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
+        GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+    }
+    public void changeOutlineColorRed()
+    {
+        Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
+        GetComponent<Renderer>().material.SetColor("_Color", Color.red);
     }
 
+    public void changeOutlineColorTransparent()
+    {
+        Renderer renderer = transform.parent.gameObject.GetComponent<MeshRenderer>();
+        GetComponent<Renderer>().material.SetColor("_Color", Color.clear);
+    }
+
+
 }
+
