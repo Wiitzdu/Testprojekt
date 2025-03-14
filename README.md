@@ -27,7 +27,7 @@ Learning doesn't just mean understanding - it means experiencing it. And that is
 
 ## Full Demo
 
-<video controls src="./media/demo.mp4" title="Demo"></>
+[Link](./media/demo.mp4)
 
 ## How to Get Started
 
